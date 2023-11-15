@@ -1,3 +1,13 @@
 {
-  "extends": "@tsconfig/react-native/tsconfig.json"
+  "extends": "@tsconfig/react-native/tsconfig.json",
+  "compilerOptions": {
+    "noUnusedLocals": false, // Disable TypeScript's unused variable check
+    "noUnusedParameters": false, // Disable TypeScript's unused parameter check
+    "jsx": "react", // Set the JSX mode to "react" if you're using React
+    // Add other TypeScript compiler options as needed
+  },
+  "include": [
+    "src/**/*.tsx",
+    "src/**/*.ts"
+  ] // Update the path to include your source files
 }
