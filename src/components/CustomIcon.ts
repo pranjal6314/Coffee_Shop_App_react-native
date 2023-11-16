@@ -3,5 +3,5 @@
 /* eslint-disable indent */
 
 import { createIconSetFromIcoMoon } from 'react-native-vector-icons';
-import IcoMoonType from '../../selection.json';
-export default createIconSetFromIcoMoon(IcoMoonType);
+import icoMoonConfig from '../../selection.json';
+export default createIconSetFromIcoMoon(icoMoonConfig);

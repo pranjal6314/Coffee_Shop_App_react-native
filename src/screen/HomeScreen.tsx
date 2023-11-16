@@ -53,7 +53,7 @@ const HomeScreen = () => {
       <StatusBar backgroundColor={COLORS.primaryBlackHex} />
       <ScrollView showsVerticalScrollIndicator={false}
         contentContainerStyle={styles.ScrollViewFlex}>
-        <HeaderBar title={'hello'} />
+        <HeaderBar title={'home'} />
       </ScrollView>
     </View>
   );
