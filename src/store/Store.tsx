@@ -134,6 +134,7 @@ export const useStore = create(
                         }
                         let spliceIndex = -1;
                         for (let i = 0; i < state.FavoritesList.length; i++) {
+                            // eslint-disable-next-line eqeqeq
                             if (state.FavoritesList[i].id == id) {
                                 spliceIndex = i;
                                 break;

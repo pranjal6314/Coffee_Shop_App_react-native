@@ -11,6 +11,7 @@ import { COLORS, SPACING } from '../theme/theme';
 // import CustomIcon from './CustomIcon';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import CustomIcon from './CustomIcon';
 interface GradientBGIconProps {
     name: string;
     color: string;
@@ -25,15 +26,15 @@ const GradientBGIcon: React.FC<GradientBGIconProps> = ({ name, color, size }) =>
                 end={{ x: 1, y: 1 }}
                 colors={[COLORS.primaryGreyHex, COLORS.primaryBlackHex]}
                 style={styles.LinearGradientBG}>
-                {/* <CustomIcon name={name} color={color} size={size} /> */}
-                <Ionicons
+                <CustomIcon name={name} color={color} size={size} />
+                {/* <Ionicons
                     testID="nextButton"
                     name={name}
                     color={
                         color
                     }
                     size={size}
-                />
+                /> */}
             </LinearGradient>
         </View>
     );
