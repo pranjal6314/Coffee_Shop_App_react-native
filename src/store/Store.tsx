@@ -1,3 +1,4 @@
+/* eslint-disable eqeqeq */
 /* eslint-disable react/no-unstable-nested-components */
 /* eslint-disable prettier/prettier */
 /* eslint-disable indent */
@@ -80,25 +81,25 @@ export const useStore = create(
                 set(
                     produce(state => {
                         if (type == 'Coffee') {
-                            for (let i = 0; i < state.CoffeeList.length; i++) {
-                                if (state.CoffeeList[i].id == id) {
-                                    if (state.CoffeeList[i].favourite == false) {
-                                        state.CoffeeList[i].favourite = true;
-                                        state.FavoritesList.unshift(state.CoffeeList[i]);
+                            for (let i = 0; i < state.coffeeList.length; i++) {
+                                if (state.coffeeList[i].id == id) {
+                                    if (state.coffeeList[i].favourite == false) {
+                                        state.coffeeList[i].favourite = true;
+                                        state.FavoritesList.unshift(state.coffeeList[i]);
                                     } else {
-                                        state.CoffeeList[i].favourite = false;
+                                        state.coffeeList[i].favourite = false;
                                     }
                                     break;
                                 }
                             }
                         } else if (type == 'Bean') {
-                            for (let i = 0; i < state.BeanList.length; i++) {
-                                if (state.BeanList[i].id == id) {
-                                    if (state.BeanList[i].favourite == false) {
-                                        state.BeanList[i].favourite = true;
-                                        state.FavoritesList.unshift(state.BeanList[i]);
+                            for (let i = 0; i < state.beanList.length; i++) {
+                                if (state.beanList[i].id == id) {
+                                    if (state.beanList[i].favourite == false) {
+                                        state.beanList[i].favourite = true;
+                                        state.FavoritesList.unshift(state.beanList[i]);
                                     } else {
-                                        state.BeanList[i].favourite = false;
+                                        state.beanList[i].favourite = false;
                                     }
                                     break;
                                 }
@@ -110,23 +111,23 @@ export const useStore = create(
                 set(
                     produce(state => {
                         if (type == 'Coffee') {
-                            for (let i = 0; i < state.CoffeeList.length; i++) {
-                                if (state.CoffeeList[i].id == id) {
-                                    if (state.CoffeeList[i].favourite == true) {
-                                        state.CoffeeList[i].favourite = false;
+                            for (let i = 0; i < state.coffeeList.length; i++) {
+                                if (state.coffeeList[i].id == id) {
+                                    if (state.coffeeList[i].favourite == true) {
+                                        state.coffeeList[i].favourite = false;
                                     } else {
-                                        state.CoffeeList[i].favourite = true;
+                                        state.coffeeList[i].favourite = true;
                                     }
                                     break;
                                 }
                             }
                         } else if (type == 'Beans') {
-                            for (let i = 0; i < state.BeanList.length; i++) {
-                                if (state.BeanList[i].id == id) {
-                                    if (state.BeanList[i].favourite == true) {
-                                        state.BeanList[i].favourite = false;
+                            for (let i = 0; i < state.beanList.length; i++) {
+                                if (state.beanList[i].id == id) {
+                                    if (state.beanList[i].favourite == true) {
+                                        state.beanList[i].favourite = false;
                                     } else {
-                                        state.BeanList[i].favourite = true;
+                                        state.beanList[i].favourite = true;
                                     }
                                     break;
                                 }

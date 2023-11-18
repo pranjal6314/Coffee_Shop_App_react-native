@@ -14,7 +14,7 @@ import { useStore } from '../store/Store';
 import { useBottomTabBarHeight } from '@react-navigation/bottom-tabs';
 import { COLORS, SPACING } from '../theme/theme';
 import HeaderBar from '../components/HeaderBar';
-// import EmptyListAnimation from '../components/EmptyListAnimation';
+import EmptyListAnimation from '../components/EmptyListAnimation';
 import PaymentFooter from '../components/PaymentFooter';
 import CartItem from '../components/CartItem';
 
@@ -56,8 +56,8 @@ const CartScreen = ({ navigation, route }: any) => {
                         <HeaderBar title="Cart" />
 
                         {CartList.length == 0 ? (
-                            //   <EmptyListAnimation title={'Cart is Empty'} />
-                            <Text>hi</Text>
+                            <EmptyListAnimation title={'Cart is Empty'} />
+
                         ) : (
                             <View style={styles.ListItemContainer}>
                                 {CartList.map((data: any) => (
