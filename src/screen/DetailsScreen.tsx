@@ -23,6 +23,7 @@ import ImageBackgroundInfo from '../components/ImageBackgroundInfo';
 import PaymentFooter from '../components/PaymentFooter';
 
 const DetailsScreen = ({ navigation, route }: any) => {
+    console.log(route)
     const ItemOfIndex = useStore((state: any) =>
         route.params.type == 'Coffee' ? state.coffeeList : state.beanList,
     )[route.params.index];

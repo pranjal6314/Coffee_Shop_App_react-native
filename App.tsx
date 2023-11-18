@@ -14,9 +14,14 @@ import DetailsScreen from './src/screen/DetailsScreen';
 import PaymentScreen from './src/screen/PaymentScreen';
 import TabNavigator from './src/navigators/TabNavigator';
 import { Text, View } from 'react-native';
+import SplashScreen from 'react-native-splash-screen';
+
 const Stack = createNativeStackNavigator();
 
 const App = () => {
+  useEffect(() => {
+    SplashScreen.hide();
+  }, []);
   return (
     <NavigationContainer >
       <Stack.Navigator screenOptions={{ headerShown: false }}>
