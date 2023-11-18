@@ -1,5 +1,6 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable prefer-const */
 /* eslint-disable eqeqeq */
-/* eslint-disable react/no-unstable-nested-components */
 /* eslint-disable prettier/prettier */
 /* eslint-disable indent */
 
@@ -19,7 +20,7 @@ export const useStore = create(
             FavoritesList: [],
             cartPrice: 0,
             CartList: [],
-            orderHistoryList: [],
+            OrderHistoryList: [],
             addToCart: (cartItem: any) =>
                 set(
                     produce(state => {
@@ -135,7 +136,7 @@ export const useStore = create(
                         }
                         let spliceIndex = -1;
                         for (let i = 0; i < state.FavoritesList.length; i++) {
-                            // eslint-disable-next-line eqeqeq
+
                             if (state.FavoritesList[i].id == id) {
                                 spliceIndex = i;
                                 break;
@@ -184,6 +185,36 @@ export const useStore = create(
                                 }
                             }
                         }
+                    }),
+                ),
+            addToOrderHistoryListFromCart: () =>
+                set(
+                    produce(state => {
+                        let temp = state.CartList.reduce(
+                            (accumulator: number, currentValue: any) =>
+                                accumulator + parseFloat(currentValue.ItemPrice),
+                            0,
+                        );
+                        if (state.OrderHistoryList.length > 0) {
+                            state.OrderHistoryList.unshift({
+                                OrderDate:
+                                    new Date().toDateString() +
+                                    ' ' +
+                                    new Date().toLocaleTimeString(),
+                                CartList: state.CartList,
+                                CartListPrice: temp.toFixed(2).toString(),
+                            });
+                        } else {
+                            state.OrderHistoryList.push({
+                                OrderDate:
+                                    new Date().toDateString() +
+                                    ' ' +
+                                    new Date().toLocaleTimeString(),
+                                CartList: state.CartList,
+                                CartListPrice: temp.toFixed(2).toString(),
+                            });
+                        }
+                        state.CartList = [];
                     }),
                 ),
 

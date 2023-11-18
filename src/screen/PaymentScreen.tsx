@@ -18,12 +18,12 @@ import {
     SPACING,
 } from '../theme/theme';
 import GradientBGIcon from '../components/GradientBGIcon';
-// import PaymentMethod from '../components/PaymentMethod';
+import PaymentMethod from '../components/PaymentMethod';
 import PaymentFooter from '../components/PaymentFooter';
 import LinearGradient from 'react-native-linear-gradient';
 import CustomIcon from '../components/CustomIcon';
 import { useStore } from '../store/Store';
-// import PopUpAnimation from '../components/PopUpAnimation';
+import PopUpAnimation from '../components/PopUpAnimation';
 
 const PaymentList = [
     {
@@ -72,11 +72,10 @@ const PaymentScreen = ({ navigation, route }: any) => {
             <StatusBar backgroundColor={COLORS.primaryBlackHex} />
 
             {showAnimation ? (
-                // <PopUpAnimation
-                //   style={styles.LottieAnimation}
-                //   source={require('../lottie/successful.json')}
-                // />
-                <Text>hello popup</Text>
+                <PopUpAnimation
+                    style={styles.LottieAnimation}
+                    source={require('../lottie/successful.json')}
+                />
             ) : (
                 <></>
             )}
@@ -165,12 +164,12 @@ const PaymentScreen = ({ navigation, route }: any) => {
                             onPress={() => {
                                 setPaymentMode(data.name);
                             }}>
-                            {/* <PaymentMethod
+                            <PaymentMethod
                                 paymentMode={paymentMode}
                                 name={data.name}
                                 icon={data.icon}
                                 isIcon={data.isIcon}
-                            /> */}
+                            />
                         </TouchableOpacity>
                     ))}
                 </View>
