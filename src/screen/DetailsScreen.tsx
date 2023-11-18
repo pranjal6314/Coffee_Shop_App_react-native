@@ -42,6 +42,29 @@ const DetailsScreen = ({ navigation, route }: any) => {
     const BackHandler = () => {
         navigation.pop();
     };
+    const addToCarthandler = ({
+        id,
+        index,
+        name,
+        roasted,
+        imagelink_square,
+        special_ingredient,
+        type,
+        price,
+    }: any) => {
+        addToCart({
+            id,
+            index,
+            name,
+            roasted,
+            imagelink_square,
+            special_ingredient,
+            type,
+            prices: [{ ...price, quantity: 1 }],
+        });
+        calculateCartPrice();
+        navigation.navigate('Cart');
+    };
     return (
         <View style={styles.ScreenContainer}>
             <StatusBar backgroundColor={COLORS.primaryBlackHex} />
@@ -126,16 +149,16 @@ const DetailsScreen = ({ navigation, route }: any) => {
                     price={price}
                     buttonTitle="Add to Cart"
                     buttonPressHandler={() => {
-                        // addToCarthandler({
-                        //     id: ItemOfIndex.id,
-                        //     index: ItemOfIndex.index,
-                        //     name: ItemOfIndex.name,
-                        //     roasted: ItemOfIndex.roasted,
-                        //     imagelink_square: ItemOfIndex.imagelink_square,
-                        //     special_ingredient: ItemOfIndex.special_ingredient,
-                        //     type: ItemOfIndex.type,
-                        //     price: price,
-                        // });
+                        addToCarthandler({
+                            id: ItemOfIndex.id,
+                            index: ItemOfIndex.index,
+                            name: ItemOfIndex.name,
+                            roasted: ItemOfIndex.roasted,
+                            imagelink_square: ItemOfIndex.imagelink_square,
+                            special_ingredient: ItemOfIndex.special_ingredient,
+                            type: ItemOfIndex.type,
+                            price: price,
+                        });
                     }}
                 />
             </ScrollView>
